@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hai-Days</title>
+    <link rel="stylesheet" href="style.css">
+
+<style>
+	.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+	}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- 네비게이션 -->
+<header class="navbar navbar1">
+    <a href="index.html" class="logo">
+      <img src="img/Logo.png" alt="하이데이즈 로고">
+    </a>
+
+    <nav>
+      <ul class="nav-links">
+        <li class="active"><a href="page1.html">설날</a></li>
+        <li><a href="page2.html">추석</a></li>
+        <li><a href="page3.html">행사</a></li>
+        <li><a href="page4.html">퀴즈</a></li>
+      </ul>
+    </nav>
+
+  <div class="hamburger">☰</div>
+</header>
+
+<!-- ✅ Hero Section -->
+<section class="conA_10">
+    <div class="hero-bg">
+      <picture>
+        <source media="(max-width: 768px)" srcset="img/page1/hero_m.png">
+        <img src="img/page1/hero.png" alt="Hero 배경" />
+      </picture>
+    </div>
+</section>
+  <!-- E : Hero 배경 -->
+   
+<!-- S : conA-B 추석 서브 네비바 -->
+<!-- ✅ 오른쪽 고정 네비바 (index 스타일) -->
+<div class="fixed-sidebar right-nav">
+  <ul>
+    <li class="active"><a href="#conB_1">설날 문화</a></li>
+    <li><a href="#conC_1">설날 음식</a></li>
+    <li><a href="#conD_1">설날 다과</a></li>
+  </ul>
+</div>
+
+<!-- E : conA-B 추석 서브 네비바 -->
+
+
+<!-- S : conB 설날 문화 -->
+<section id="conB_1" class="conB_1">
+    <div class="conB-content">
+      <img src="img/page1/conB_1.png" alt="설날 문화 메인 이미지" class="conB-main" />
+    </div>
+</section>
+<!-- E : conB 설날 문화 -->
+
+
+
+<!-- S : conC 설날 음식 -->
+<section id="conC_1" class="conC_1">
+ <div class="title-area common-title">
+    <span class="subtitle">설날 음식</span>
+    <h2>설날에는 주로 무엇을 먹을까?</h2>
+  </div>
+
+  <div class="food-section">
+    <!-- 🇰🇷 한국 -->
+    <div class="food-set korea">
+      <div class="food-card">
+        <img src="img/page1/conC_1.png" alt="떡국" />
+        <h3>떡국</h3>
+        <p class="sub vietnamese-text">canh bánh gạo</p>
+        <p class="desc">한국 설날 아침에 먹는 대표적인 음식으로,<br>
+          가족 모두가 한 살을 더 먹는다는 의미가 있어요.
+        </p>
+      </div>
+
+      <div class="cook-box">
+        <h4>떡국 만드는 방법<br>▾</h4>
+        <p>얇게 썬 떡국떡을 맑은 육수에 넣고 끓인 뒤,<br class="br-desktop"> 고기·계란지단·김가루 등을 고명으로 올려요.</p>
+
+        <div class="ingredient-list">
+          <li><img src="img/page1/ingredient/k1.png" alt=""><div class="text"><h4>떡국떡</h4><p class="vietnamese-text">Bánh tteok</p><p>설날 아침에 끓여 먹는<br class="br-desktop">떡국에 넣는 흰떡</p></div></li>
+          <li><img src="img/page1/ingredient/k2.png" alt=""><div class="text"><h4>소고기</h4><p class="vietnamese-text">Thịt bò</p><p>국물이나 고명으로 쓰여<br class="br-desktop">깊은 맛을 내는 고기</p></div></li>
+          <li><img src="img/page1/ingredient/k3.png" alt=""><div class="text"><h4>지단</h4><p class="vietnamese-text">Trứng chiên thái sợi</p><p>달걀을 얇게 부쳐<br class="br-desktop">고명으로 울리는 전통 장식</p></div></li>
+          <li><img src="img/page1/ingredient/k4.png" alt=""><div class="text"><h4>파∙고추</h4><p class="vietnamese-text">Hành lá & Ớt</p><p>음식의 맛과 향을<br class="br-desktop">살려주는 기본 양념 재료</p></div></li>          
+        </div>
+      </div>
+    </div>
+
+    <!-- 🇻🇳 베트남 -->
+    <div class="food-set vietnam">
+      <div class="food-card">
+        <img src="img/page1/conC_2.png" alt="반쭝" />
+        <h3>반쭝</h3>
+        <p class="sub vietnamese-text">Bánh chưng</p>
+        <p class="desc">
+          베트남 설날에 먹는 전통 음식으로,<br>
+          가족의 건강과 행운을 빌면서 만들어요.
+        </p>
+      </div>
+
+      <div class="cook-box">
+        <h4>반쭝 만드는 방법<br>▾</h4>
+        <p>찹쌀, 녹두, 돼지고기를 넣고 바나나잎으로 싸서<br class="br-desktop"> 정성껏 감싸 삶아 익히는 음식이에요.</p>
+
+        <div class="ingredient-list">
+          <li><img src="img/page1/ingredient/v1.png" alt=""><div class="text"><h4>돼지고기</h4><p class="vietnamese-text">Thịt lợn</p><p>주로 만두, 반쭝 같은<br class="br-desktop">명절 음식에 들어가는 고기</p></div></li>
+          <li><img src="img/page1/ingredient/v2.png" alt=""><div class="text"><h4>녹두</h4><p class="vietnamese-text">Đỗ xanh</p><p>녹두와 완두콩을 속재료로<br class="br-desktop">넣거나 고명으로 곁들임</p></div></li>
+          <li><img src="img/page1/ingredient/v3.png" alt=""><div class="text"><h4>바나나잎</h4><p class="vietnamese-text">Lá chuối</p><p>잎으로 속재료를 감싸<br class="br-desktop">모양을 만드는 포장 용도</p></div></li>
+          <li><img src="img/page1/ingredient/v4.png" alt=""><div class="text"><h4>찹쌀</h4><p class="vietnamese-text">Gạo nếp</p><p>떡이나 밥, 과자를 만들 때<br class="br-desktop">쓰이는 찰기 많은 쌀</p></div></li>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- E : conC 설날 음식 -->
+
+
+<!-- S : conD 설날 다과 - 전통 다과 --> 
+<section id="conD_1" class="conD_1">
+  <div class="contentF">
+    <div class="title-area common-title">
+      <span class="subtitle">설날 다과</span>
+      <h2>설날에는 간식으로 무엇을 먹을까?</h2>
+    </div>
+  </div>
+
+  <!-- ✅ 한국 다과 -->
+  <div class="snack-set">
+    <div class="nation"><h3>∙ 한국 ∙</h3></div>
+    <div class="snack-inner">
+      <div class="snack-left">
+        <img src="img/page1/snack_1.png" alt="한국 전통 다과 메인" />
+      </div>
+      <div class="snack-right">
+        <h3>전통 다과</h3>
+        <p class="sub vietnamese-text">Bánh kẹo truyền thống</p>
+        <p class="desc">
+          쌀, 꿀, 약재로 만들어 달콤하고 건강한 맛을 지녔어요.<br class="br-desktop">
+          가족과 함께 나누며 복을 기원하는 상징적인 의미도 담고 있어요.
+        </p>
+      </div>
+    </div>
+
+    <div class="snack-box">
+      <ul class="snack-list">
+        <li><img src="img/page1/snack/k1.png" alt=""><div class="text"><h4>식혜</h4><p class="vietnamese-text">Sikhye</p><p>엿기름과 쌀로 만든<br class="br-desktop">달콤한 전통 음료</p></div></li>
+        <li><img src="img/page1/snack/k2.png" alt=""><div class="text"><h4>약과</h4><p class="vietnamese-text">Yakgwa</p><p>꿀과 기름으로 만든<br class="br-desktop">대표적인 명절 과자</p></div></li>
+        <li><img src="img/page1/snack/k3.png" alt=""><div class="text"><h4>한과</h4><p class="vietnamese-text">Hangwa</p><p>쌀과 꿀로 빚어낸<br class="br-desktop">전통 과자</p></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ✅ 베트남 다과 -->
+  <div class="snack-set vietnam">
+  <div class="nation"><h3>∙ 베트남 ∙</h3></div>
+    <div class="snack-inner">
+      <div class="snack-left">
+        <img src="img/page1/snack_2.png" alt="베트남 전통 다과 메인" />
+      </div>
+      <div class="snack-right">
+        <h3>오과쟁반</h3>
+        <p class="sub vietnamese-text">Mâm ngũ quả</p>
+        <p class="desc">
+          정해진 규칙은 없고, 다섯 가지 과일을 예쁘게 담아 올려요.<br class="br-desktop">
+          한 해 동안 풍성한 수확과 복을 기원하는 마음을 담고있어요.
+        </p>
+      </div>
+    </div>
+
+  <div class="snack-box viet">
+  <div class="snack-row row1">
+    <ul class="snack-list">
+      <li><img src="img/page1/snack/v1.png" alt=""><div class="text"><h4>바나나</h4><p class="vietnamese-text">Chuối</p><p>베트남 제단에 올리는<br class="br-desktop">대표적인 과일 중 하나</p></div></li>
+      <li><img src="img/page1/snack/v2.png" alt=""><div class="text"><h4>용과</h4><p class="vietnamese-text">Thanh long</p><p>붉은 용과는 재물을 상징하며<br class="br-desktop">행운을 상징하는 과일</p></div></li>
+    </ul>
+  </div>
+
+  <div class="snack-row row2">
+    <ul class="snack-list">
+      <li><img src="img/page1/snack/v3.png" alt=""><div class="text"><h4>망고</h4><p class="vietnamese-text">Xoài</p><p>‘소비하다‘와 발음이 유사하여 소비와 풍요로운 삶을 의미</p></div></li>
+      <li><img src="img/page1/snack/v4.png" alt=""><div class="text"><h4>사과</h4><p class="vietnamese-text">Táo</p><p>복과 평화를 상징하며<br class="br-desktop">제단에 올리는 과일</p></div></li>
+      <li><img src="img/page1/snack/v5.png" alt=""><div class="text"><h4>코코넛</h4><p class="vietnamese-text">Dừa</p><p>다산과 풍요를 상징하며<br class="br-desktop">제단에 올리는 과일</p></div></li>
+    </ul>
+  </div>
+</div>
+</section>
+<!-- E : conD 설날 다과 -->
+
+
+
+<!-- footer -->
+<div class="footer_bg p1">
+  <div class="footer_1">
+    <a href="page4.html">
+      <img src="img/Quiz1png.png" alt="Quiz" class="Quiz">
+    </a>
+  </div>
+</div>
+
+
+<footer class="footer">
+  <div class="logo_f"> <img src="img/Logo_footer.png" alt="하이데이즈 로고"> </div>
+
+  <div class="footer-copy">
+    © 2025 Hai-Days. Discovery, Inc. or its subsidiaries and affiliates.<br class="br-desktop">
+    All trademarks are the property of their respective owners. All rights reserved.
+  </div>
+</footer>
+
+<button id="topBtn" title="맨 위로 이동">⬆</button>
+
+
+<script>
+// ✅ 오른쪽 고정 네비바 (index 스타일) 스크롤 감지
+document.addEventListener('DOMContentLoaded', () => {
+  const sidebarLinks = document.querySelectorAll('.right-nav a');
+  const sections = document.querySelectorAll('#conB_1, #conC_1, #conD_1');
+  const sidebar = document.querySelector('.right-nav');
+
+  // 활성 링크 업데이트
+  function updateActiveLink() {
+    let current = '';
+    const viewportCenter = window.scrollY + window.innerHeight / 2;
+
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const bottom = top + section.offsetHeight;
+      if (viewportCenter >= top && viewportCenter < bottom) {
+        current = section.id;
+      }
+    });
+
+    sidebarLinks.forEach(link => {
+      link.parentElement.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.parentElement.classList.add('active');
+      }
+    });
+  }
+
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        window.scrollTo({ top: target.offsetTop, behavior: 'smooth' });
+      }
+    });
+  });
+
+  window.addEventListener('scroll', updateActiveLink);
+  updateActiveLink();
+});
+
+
+// ✅ conB부터 네비바 표시 (공통)
+document.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.querySelector('.fixed-sidebar.right-nav');
+  const conB = document.querySelector('[id^="conB_"]'); // conB_1, conB_2 등
+  if (!sidebar || !conB) return;
+
+  function toggleSidebar() {
+    const triggerY = conB.offsetTop - 100; // conB 상단에서 100px 전쯤부터 표시
+    if (window.scrollY < triggerY) {
+      sidebar.style.opacity = '0';
+      sidebar.style.visibility = 'hidden';
+      sidebar.style.pointerEvents = 'none';
+    } else {
+      sidebar.style.opacity = '1';
+      sidebar.style.visibility = 'visible';
+      sidebar.style.pointerEvents = 'auto';
+    }
+  }
+
+  window.addEventListener('scroll', toggleSidebar);
+  toggleSidebar();
+});
+
+
+
+  // 스크롤 시 버튼 표시
+  const topBtn = document.getElementById("topBtn");
+
+  // 스크롤 시 버튼 보이기/숨기기
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 250) {
+      topBtn.classList.add("show");
+    } else {
+      topBtn.classList.remove("show");
+    }
+  });
+
+  // 클릭 시 부드럽게 상단 이동
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+
+
+// 다과 스크롤
+document.addEventListener("DOMContentLoaded", () => {
+  // 대상: .conD_1 내부의 모든 이미지
+  const images = document.querySelectorAll(".conD_1 img");
+
+  // 모든 이미지에 scroll-zoom 클래스 부여
+  images.forEach(img => img.classList.add("scroll-zoom"));
+
+  // Intersection Observer 생성
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible"); // 나타날 때 확대
+      } else {
+        entry.target.classList.remove("visible"); // 영역 벗어나면 원상복귀
+      }
+    });
+  }, {
+    threshold: 0.2 // 20% 이상 보이면 작동
+  });
+
+  // 각 이미지 관찰 시작
+  images.forEach(img => observer.observe(img));
+});
+
+
+// 상단 네비바 스크롤 고정
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar1 = document.querySelector('header.navbar1');
+    let lastScrollY = 0; // 마지막 스크롤 위치
+    const threshold = 100; // 내비게이션 바 숨김/표시를 시작할 스크롤 임계값 (px)
+
+    function handleScroll() {
+        const currentScrollY = window.scrollY;
+
+        // 1. 페이지 맨 위 (스크롤 0)일 때 처리
+        if (currentScrollY === 0) {
+            navbar1.classList.add('initial-visible'); // 초기 투명 상태로 보이게
+            navbar1.classList.remove('scrolled-visible');
+            navbar1.classList.remove('scrolled-hidden');
+            lastScrollY = 0; // 스크롤 위치 초기화
+            return; // 이후 로직 실행하지 않음
+        } 
+        
+        // 2. 페이지 맨 위가 아니면 initial-visible 제거
+        navbar1.classList.remove('initial-visible');
+
+        // 3. 스크롤 임계값을 넘었을 때만 숨김/표시 로직 적용
+        if (currentScrollY > threshold) {
+            // 스크롤을 올릴 때 (현재 스크롤이 이전 스크롤보다 작을 때)
+            if (currentScrollY < lastScrollY) {
+                navbar1.classList.add('scrolled-visible'); // 나타남
+                navbar1.classList.remove('scrolled-hidden');
+            } 
+            // 스크롤을 내릴 때 (현재 스크롤이 이전 스크롤보다 클 때)
+            else if (currentScrollY > lastScrollY) {
+                navbar1.classList.add('scrolled-hidden'); // 숨김
+                navbar1.classList.remove('scrolled-visible');
+            }
+        } else {
+            // 임계값 이내에서는 기본적으로 숨김 상태 유지 (또는 원하는 대로)
+            // 여기서는 임계값 내에서 스크롤 방향과 상관없이 숨김으로 유지
+            navbar1.classList.add('scrolled-hidden'); 
+            navbar1.classList.remove('scrolled-visible');
+        }
+
+        lastScrollY = currentScrollY; // 현재 스크롤 위치 업데이트
+    }
+
+    // 스크롤 이벤트 리스너 추가
+    window.addEventListener('scroll', handleScroll);
+
+    // 페이지 로드 시 초기 상태를 한 번 실행하여 설정
+    handleScroll();
+});
+
+//스크롤 conC 설명 자동스크롤
+// ✅ 만드는 방법 (.cook-box) 스크롤 시 자동 펼침
+document.addEventListener("DOMContentLoaded", () => {
+  const cookBoxes = document.querySelectorAll(".cook-box");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // 화면에 30% 이상 보이면
+      if (entry.isIntersecting) {
+        // p 태그를 찾아 보이게 하는 클래스 추가 (또는 직접 스타일 변경)
+        const pTag = entry.target.querySelector("p");
+        if (pTag) {
+          pTag.style.opacity = "1";
+          pTag.style.maxHeight = "220px";
+          pTag.style.transform = "translateY(0)";
+          pTag.style.margin = "12px 0 40px";
+        }
+      }
+    });
+  }, { threshold: 0.3 }); // 30% 보일 때 작동
+
+  cookBoxes.forEach(box => observer.observe(box));
+});
+
+
+// ✅ 모바일: 음식 카드(.food-card) 스크롤 시 반짝임 효과
+document.addEventListener("DOMContentLoaded", () => {
+  // 모바일 화면(768px 이하)에서만 실행
+  if (window.innerWidth <= 768) {
+    const foodCards = document.querySelectorAll(".conC_1 .food-card");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // 화면에 들어오면 클래스 추가 (반짝임 시작)
+          entry.target.classList.add("auto-shine");
+        } else {
+          // 화면에서 나가면 클래스 제거 (다시 들어올 때 또 반짝이게 하려면)
+          entry.target.classList.remove("auto-shine");
+        }
+      });
+    }, { threshold: 0.5 }); // 카드가 50% 정도 보일 때 작동
+
+    foodCards.forEach(card => observer.observe(card));
+  }
+});
+</script>
+
+<script src="scroll-zoom.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

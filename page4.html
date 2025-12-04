@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hai-Days</title>
+    <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    background-image: linear-gradient(180deg, #CCF2FF,#FFF);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: block; 
+  cursor: url('./img/cursor.png'), auto;
+}
+/* 퀴즈 선택지 .option에 마우스를 올렸을 때 */
+.option:hover {
+  transform: translateY(-5px);
+  cursor: url('./img/cursor.png'), pointer;
+}
+
+/* "시작하기" 버튼에 마우스를 올렸을 때 */
+#start-btn:hover {
+  background-color: #f1f1f1;
+  cursor: url('./img/cursor.png'), pointer;
+}
+	.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+	}
+.conB_4 {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 1000px;
+}
+
+.nav-links li.active4 a {
+  background-image: url(./img/nav_bg2.png);
+  background-repeat: no-repeat;
+  color: #fff;
+  background-size: contain;
+  background-position: center;
+  padding: 15px 25px; 
+}
+
+    .quiz-centered-container {
+      width: 1400px;
+      height: 850px;
+      border-radius: 40px;
+      box-sizing: border-box;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 50px 0;
+    }
+
+    /* --- 1. 시작 화면 --- */
+    #start-container {
+      background-image: url('./img/quiz_bg.png');
+      background-size: cover;
+      background-position: center;
+      z-index: 3;
+    }
+
+    #start-btn {
+      position: absolute;
+      left: 50%;
+      top: 70%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      color: #004a7f;
+      border: none;
+      padding: 18px 70px;
+      font-size: 22px;
+      font-weight: 700;
+      border-radius: 40px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease;
+    }
+    #start-btn:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* --- 2. 퀴즈 진행 화면 --- */
+    #quiz-container {
+      background-image: url('./img/quiz_bg2.png');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      padding: 40px 60px; 
+      overflow-y: hidden; 
+      z-index: 2;
+    }
+
+    .quiz-top-row {
+      position: relative; 
+      height: 150px; /* 캐릭터와 질문박스 높이 고려 */
+      margin-bottom: 20px;
+    }
+
+    .quiz-char {
+      width: 180px;
+      height: auto;
+      position: absolute;
+      left: 50px; 
+      top: 10%;
+      transform: rotate(-20deg);
+    }
+
+    .progress-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: absolute;
+      right: 0;
+      top: 10px;
+    }
+
+    #progress-bar-bg {
+      width: 120px;
+      height: 16px;
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    #progress-bar {
+      height: 100%;
+      width: 0%;
+      background-color: #76c840;
+      border-radius: 10px;
+      transition: width 0.4s ease-out;
+    }
+
+    #progress-text {
+      font-size: 16px;
+      font-weight: 700;
+      color: #555;
+    }
+
+    #question {
+      font-size: 22px; 
+      font-weight: 700;
+      color: #5B371F;
+      padding: 20px 25px;
+      border-radius: 15px;
+      letter-spacing: 1.5;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      height: 120px;
+      align-items: center;
+
+      position: absolute;
+      left: 52%;
+      top: 30px;
+      transform: translateX(-50%);
+      width: 800px;
+      box-sizing: border-box;
+    }
+
+    #options-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      padding: 0 30px 0 60px;
+      align-items: flex-start;
+      margin-top: 80px;
+    }
+
+    .option {
+      background-color: transparent;
+      border-radius: 0;
+      cursor: pointer;
+      border: none;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
+    }
+
+    .option:nth-child(even) {
+      padding-top: 60px;
+    }
+
+    .option:nth-child(odd) {
+      padding-top: 0px;
+    }
+    
+    .option:hover {
+      transform: translateY(-5px);
+    }
+    .option img {
+      width: 100%;
+      max-width: 230px;
+      height: auto; 
+      object-fit: contain;
+      margin-bottom: 8px;
+      background-color: transparent;
+      border-radius: 0;
+    }
+    .option span {
+      font-size: 24px;
+      font-weight: 700;
+      color: #5B371F;
+    }
+    
+    .option.correct img {
+      filter: drop-shadow(0 0 15px rgba(255, 75, 75, 0.8));
+    }
+    .option.incorrect img {
+      opacity: 0.5;
+    }
+    .option.disabled {
+      pointer-events: none;
+    }
+
+    /* --- 3. 결과 창 --- */
+    #result-container {
+      padding: 0;
+      background-image: url('./img/quiz_img/ending.png'); /* 배경 이미지 추가 */
+      background-size: 100% 100%; /* 컨테이너에 맞춤 */
+      background-repeat: no-repeat;
+      text-align: center;
+      z-index: 1;
+    }
+    /* ✅ 점수별 배경 이미지 (PC) - 파일명은 준비하신 것으로 변경하세요 */
+#result-container.score-low {
+  background-image: url('./img/quiz_img/ending_low.png'); /* 0~4점 이미지 */
+}
+#result-container.score-mid {
+  background-image: url('./img/quiz_img/ending_mid.png'); /* 5~7점 이미지 */
+}
+#result-container.score-high {
+  background-image: url('./img/quiz_img/ending_high.png'); /* 8점 이미지 */
+}
+    #result-container h2 {
+      color: #5B371F;
+      font-weight: 700;
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+    }
+    #result-container p {
+      font-size: 30px;
+      margin: 0;
+      color: #333;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    #retry-btn {
+      background-color: #FF8297;
+      color: #fff;
+      border: none;
+      padding: 12px 45px;
+      font-size: 20px;
+      font-weight: 700;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+    }
+    #retry-btn:hover {
+      background-color: #e6687d;    }
+    /* 점수판 흰색 박스 스타일 */
+    #result-bubble {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px; /* 너비 지정 */
+      padding: 30px 50px;
+      border-radius: 20px;
+      box-sizing: border-box; /* 패딩 포함 너비 계산 */
+    }
+    
+    /* 점수 강조 스타일 */
+    .highlight-score {
+      color: #ff5722; /* 강조 색상 */
+      font-weight: 700;
+      font-size: 1.2em; /* 살짝 크게 */
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .footer.quiz{
+      margin-top: 100px;
+    }
+
+
+/* ==============================================
+   📱 Page 4 (퀴즈) 모바일 반응형
+==============================================
+*/
+html, body { overflow-x: hidden; }
+@media (max-width: 768px) {
+    .conB_4 {
+    display: flex; /* Grid 대신 Flex 사용 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* 화면 꽉 채움 */
+    padding: 80px 20px;
+    box-sizing: border-box;
+  }
+
+  /* 절대좌표값 초기화 + 카드 크기 안정화 */
+  .quiz-centered-container {
+    position: static !important; /* PC의 absolute 해제 */
+    transform: none !important; /* PC의 translate 해제 */
+    
+    width: 100% !important;
+    max-width: 400px; /* 너무 넓어지지 않게 제한 */
+    height: auto !important;
+    min-height: 600px; /* 최소 높이 확보 */
+    
+    margin: 0 auto !important; /* 가로 중앙 정렬 */
+    padding: 20px;
+    
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* 입체감 추가 */
+    aspect-ratio: unset; /* 비율 해제하고 내용물에 맞춤 */
+  }
+  /* --- 퀴즈 컨테이너 공통 --- */
+  .conB_4 {
+    min-height: auto;
+    padding: 90px 10px 80px 10px;
+  }
+  
+  .quiz-centered-container {
+    position: static;
+    transform: none;
+
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;     
+    padding: 20px;
+    border-radius: 20px;
+    position: relative; 
+    aspect-ratio: 380 / 490; 
+  }
+
+  /* --- 1. 시작 화면 --- */
+  #start-container {
+    /* 배경 이미지 설정 */
+    background-image: url('./img/quiz_bg_m.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* 1. 플렉스박스 선언 (중앙 정렬을 위해 필수) */
+    display: flex !important;
+    flex-direction: column !important;
+    
+    /* 2. 가로/세로 모두 정중앙 정렬 */
+    justify-content: center !important; /* 세로 중앙 (column일 때) */
+    align-items: center !important;     /* 가로 중앙 (column일 때) */
+    
+    /* 3. 높이와 패딩 강제 설정 */
+    height: 502px !important; /* 배경 높이 확보 */
+    padding: 0 !important; 
+  }
+
+  #start-btn {
+    /* PC용 위치 값(absolute) 완전 초기화 */
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important; 
+    top: auto !important;
+    left: auto !important;
+    
+    /* 버튼 크기 */
+    padding: 14px 50px;
+    font-size: 18px;
+  }
+  
+#start-container.hidden,
+#quiz-container.hidden,
+#result-container.hidden {
+  display: none !important;
+}
+  /* --- 2. 퀴즈 진행 화면 --- */
+#quiz-container {
+    background-image: url('./img/quiz_bg2_m.png');
+    padding: 30px 20px !important;
+    background-size: cover; 
+    background-position: center;
+    
+    height: 502px !important; /* ⬅️ auto 대신 502px로 고정하여 시작화면과 크기 일치 */
+    aspect-ratio: unset; 
+  }
+  .quiz-top-row {
+    height: auto; 
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .quiz-char {
+    width: 60px;
+    transform: rotate(-10deg);
+    top: 15%;
+  }
+ .progress-wrapper {
+    order: 1; /* ⬅️ 가장 위에 배치 */
+    position: static; 
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* 중앙 정렬 (또는 flex-end: 우측 정렬) */
+    margin-bottom: 15px; /* 질문 텍스트와 간격 */
+  }
+  h2#question {
+    order: 2;
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    height: auto;
+    min-height: 80px;
+    max-width: 300px;
+    font-size: 17px;
+    line-height: 1.5;
+    text-align: center;
+    
+    margin: 20px auto 0 auto !important;
+    padding: 10px 0;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 0;
+    margin-top: 35px;
+    width: 100%;
+  }
+  .option {
+    padding-top: 0 !important;
+    width: 100%;
+    padding: 0;
+  }
+  .option img {
+    width: 150px;
+    height: auto;
+    max-height: 145px;
+    object-fit: contain;
+    margin: 0;
+  }
+  .option span {
+    font-size: 16px;
+    text-align: center;
+    word-break: keep-all;
+  }
+.option.correct img {
+      filter: drop-shadow(0 0 10px rgba(255, 75, 75, 0.8));
+    }
+  /* --- 3. 결과 화면 --- */
+  #result-container {
+    background-image: url('./img/quiz_img/ending_m.png'); 
+    
+    height: 502px !important;
+    background-position: center;
+    background-repeat: no-repeat; /* ⬅️ 이미지 반복 방지 */
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
+  }
+/* ✅ 점수별 배경 이미지 (모바일) */
+  #result-container.score-low {
+    background-image: url('./img/quiz_img/ending_m_low.png'); 
+  }
+  #result-container.score-mid {
+    background-image: url('./img/quiz_img/ending_m_mid.png'); 
+  }
+  #result-container.score-high {
+    background-image: url('./img/quiz_img/ending_m_high.png'); 
+  }
+  #result-container h2 {
+    position: static !important;
+    transform: none !important;
+    margin-top: 80px;
+    font-size: 24px;
+  }
+
+  #result-bubble {
+    position: static !important;
+    transform: none !important;
+    width: 90% !important;
+    margin: 20px auto;
+    padding: 0;
+  }
+
+  #result-bubble p {
+    font-size: 18px; 
+  }
+
+  .highlight-score {
+     font-size: 1.2em; 
+  }
+
+  #retry-btn {
+    position: static !important;
+    transform: none !important;
+    margin-top: 70px;
+    padding: 14px 50px;
+    font-size: 18px;
+  }
+
+  /* --- 4. 퀴즈 푸터 --- */
+  .footer.quiz {
+     margin-top: 0; 
+  }
+}
+
+/* PC/모바일 줄바꿈용 <br> 태그 */
+.br-desktop { display: block; } /* PC 기본값 */
+.br-mobile { display: none; }  /* PC 기본값 */
+
+@media (max-width: 768px) {
+  .br-desktop { display: none; }  /* 모바일 숨김 */
+  .br-mobile { display: block; } /* 모바일 보임 */
+}
+</style>
+</head>
+
+<body>
+
+  <!-- 네비게이션 -->
+<header class="navbar navbar1">
+  <a href="index.html" class="logo">
+    <img src="img/Logo.png" alt="하이데이즈 로고">
+  </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="page1.html">설날</a></li>
+        <li><a href="page2.html">추석</a></li>
+        <li><a href="page3.html">행사</a></li>
+        <li class="active4"><a href="page4.html">퀴즈</a></li>
+      </ul>
+    </nav>
+  <div class="hamburger">☰</div>
+</header>
+
+
+<!-- 퀴즈 -->
+ <section class="conB_4">
+  <div id="start-container" class="quiz-centered-container">
+    <button id="start-btn">시작하기</button>
+  </div>
+
+  <div id="quiz-container" class="quiz-centered-container hidden">
+    
+    <div class="quiz-top-row">
+      <img src="./img/rirong.png" alt="캐릭터" class="quiz-char" id="quiz-char-img">
+      <h2 id="question">질문이 여기에 표시됩니다.</h2>
+      <div class="progress-wrapper">
+        <div id="progress-bar-bg">
+          <div id="progress-bar"></div>
+        </div>
+        <span id="progress-text">1/8</span>
+      </div>
+    </div>
+
+    <div id="options-grid">
+    </div>
+  </div>
+
+<div id="result-container" class="quiz-centered-container hidden">
+    <h2>결과를 확인하세요!</h2>
+    
+    <div id="result-bubble">
+      <p id="score-text">8개 중 0개를 맞혔습니다!</p>
+    </div>
+
+    <button id="retry-btn">다시 하기</button>
+  </div>
+ </section>
+
+<!-- footer -->
+<footer class="footer quiz">
+  <div class="logo_f"> <img src="img/Logo_footer.png" alt="하이데이즈 로고"> </div>
+
+  <div class="footer-copy">
+    © 2025 Hai-Days. Discovery, Inc. or its subsidiaries and affiliates.<br class="text-pc">
+    All trademarks are the property of their respective owners. All rights reserved.
+  </div>
+</footer>
+
+
+  <script>
+    const quizData = [
+      {
+        question: "Q. 한국의 설날에 1살 더 먹는 의미로 먹는 음식은 무엇일까요?",
+        options: [
+          { text: "송편", img: "img/quiz_img/songpyeon.png" },
+          { text: "오과쟁반", img: "img/quiz_img/ogwajengban.png" },
+          { text: "떡국", img: "img/quiz_img/tteokguk.png" },
+          { text: "식혜", img: "img/quiz_img/sikhye.png" }
+        ],
+        answer: "떡국",
+        charImage: "./img/hodori.png"
+      },
+      {
+        question: "Q. 베트남 설날(뗏)에 먹는, 바나나잎에 찹쌀, 녹두, <br class=\"br-desktop\">돼지고기를 싸서 삶는 전통 음식은 무엇인가요?",
+        options: [
+          { text: "반쭝", img: "img/quiz_img/banhchung.png" },
+          { text: "전", img: "img/quiz_img/jeon1.png" },
+          { text: "오과쟁반", img: "img/quiz_img/ogwajengban.png" },
+          { text: "월병", img: "img/quiz_img/wolbyeong.png" } 
+        ],
+        answer: "반쭝",
+        charImage: "./img/rirong.png"
+      },
+      {
+        question: "Q. 한국의 추석에 먹는, 반달 모양의 대표적인 떡은 무엇인가요?",
+        options: [
+          { text: "약과", img: "img/quiz_img/yakgwa.png" },
+          { text: "송편", img: "img/quiz_img/songpyeon.png" },
+          { text: "한과", img: "img/quiz_img/hangwa.png" }, 
+          { text: "식혜", img: "img/quiz_img/sikhye.png" }
+        ],
+        answer: "송편",
+        charImage: "./img/hodori.png"
+      },
+      {
+        question: "Q. 베트남 설날(뗏)에 풍성한 수확과 복을 기원하는 <br class=\"br-desktop\"> '다섯 가지 과일 쟁반'을 무엇이라고 할까요?",
+        options: [
+          { text: "포멜로", img: "img/quiz_img/pomelo.png" },
+          { text: "전통다과", img: "img/quiz_img/jeontongdagwa.png" },
+          { text: "테", img: "img/quiz_img/te.png" },
+          { text: "오과쟁반", img: "img/quiz_img/ogwajengban.png" }
+        ],
+        answer: "오과쟁반",
+        charImage: "./img/rirong.png"
+      },
+      {
+        question: "Q. 베트남 추석(뗏쭝투)에 아이들이 들고 행진하는 <br class=\"br-desktop\"> '별 모양 등불'의 이름은 무엇인가요?",
+        options: [
+          { text: "덴옹사오", img: "img/quiz_img/denongsao.png" },
+          { text: "사자춤", img: "img/quiz_img/sajachum.png" },
+          { text: "월병", img: "img/quiz_img/wolbyeong.png" },
+          { text: "강강술래", img: "img/quiz_img/ganggangsullae.png" }
+        ],
+        answer: "덴옹사오",
+        charImage: "./img/rirong.png"
+      },
+      {
+        question: "Q. 추석 밤, 보름달 아래에서 손을 맞잡고 돌며 춤추는 <br class=\"br-desktop\"> 한국의 전통 놀이는 무엇일까요?",
+        options: [
+          { text: "강강술래", img: "img/quiz_img/ganggangsullae.png" },
+          { text: "윷놀이", img: "img/quiz_img/yutnori.png" },
+          { text: "달맞이", img: "img/quiz_img/moon.png" },
+          { text: "사자춤", img: "img/quiz_img/sajachum.png" }
+        ],
+        answer: "강강술래",
+        charImage: "./img/hodori.png"
+      },
+      {
+        question: "Q. 한국의 제사인 차례상에 올라가는 것은 무엇인가요?",
+        options: [
+          { text: "매화 꽃", img: "img/quiz_img/maehwa_kkot.png" },
+          { text: "미역국", img: "img/quiz_img/miyeokguk.png" },
+          { text: "복숭아 꽃", img: "img/quiz_img/boksunga_kkot.png" },
+          { text: "전", img: "img/quiz_img/jeon2.png" }
+        ],
+        answer: "전",
+        charImage: "./img/hodori.png"
+      },
+      {
+        question: "Q. 베트남 설날 음식인 반쭝에 들어가는 재료는 무엇인가요?",
+        options: [
+          { text: "지단", img: "img/quiz_img/jidan.png" },
+          { text: "돼지고기", img: "img/quiz_img/dwaejigogi.png" },
+          { text: "파&고추", img: "img/quiz_img/pa_gochu.png" },
+          { text: "바나나", img: "img/quiz_img/banana.png" }
+        ],
+        answer: "돼지고기",
+        charImage: "./img/rirong.png"
+      }
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+    const totalQuestions = quizData.length;
+
+    const startContainer = document.getElementById("start-container");
+    const quizContainer = document.getElementById("quiz-container");
+    const resultContainer = document.getElementById("result-container");
+    
+    const startBtn = document.getElementById("start-btn");
+    const retryBtn = document.getElementById("retry-btn");
+    
+    const questionEl = document.getElementById("question");
+    const optionsGridEl = document.getElementById("options-grid");
+    
+    const progressTextEl = document.getElementById("progress-text");
+    const progressBarEl = document.getElementById("progress-bar");
+    
+    const scoreTextEl = document.getElementById("score-text");
+
+    function startQuiz() {
+      startContainer.classList.add("hidden");
+      resultContainer.classList.add("hidden");
+      
+      quizContainer.classList.remove("hidden");
+      quizContainer.style.display = "block"; 
+      
+      currentQuestionIndex = 0;
+      score = 0;
+      loadQuiz();
+    }
+    
+    function showStartScreen() {
+      resultContainer.classList.add("hidden");
+      quizContainer.classList.add("hidden");
+      
+      startContainer.classList.remove("hidden");
+      startContainer.style.display = "block"; 
+    }
+
+    function loadQuiz() {
+      optionsGridEl.innerHTML = "";
+      const currentQuiz = quizData[currentQuestionIndex];
+      questionEl.innerHTML = currentQuiz.question;
+      
+      progressTextEl.innerText = `${currentQuestionIndex + 1}/${totalQuestions}`;
+      
+      const percentage = ((currentQuestionIndex + 1) / totalQuestions) * 100;
+      progressBarEl.style.width = `${percentage}%`;
+      
+      const charImgEl = document.getElementById("quiz-char-img");
+   if (charImgEl && currentQuiz.charImage) {
+    charImgEl.src = currentQuiz.charImage;
+  }
+
+      currentQuiz.options.forEach(option => {
+        const optionEl = document.createElement("div");
+        optionEl.classList.add("option");
+        optionEl.dataset.text = option.text;
+        optionEl.innerHTML = `
+          <img src="${option.img}" alt="${option.text}">
+          <span>${option.text}</span>
+        `;
+        optionEl.addEventListener("click", handleOptionClick);
+        optionsGridEl.appendChild(optionEl);
+      });
+    }
+
+    function handleOptionClick(event) {
+      const selectedOptionEl = event.currentTarget;
+      const selectedAnswer = selectedOptionEl.dataset.text;
+      const correctAnswer = quizData[currentQuestionIndex].answer;
+      const allOptionEls = optionsGridEl.querySelectorAll(".option");
+
+      allOptionEls.forEach(el => {
+        el.classList.add("disabled");
+        if (el.dataset.text === correctAnswer) {
+          el.classList.add("correct");
+        }
+      });
+
+      if (selectedAnswer === correctAnswer) {
+        score++;
+      } else {
+        selectedOptionEl.classList.add("incorrect");
+      }
+
+      setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < totalQuestions) {
+          loadQuiz();
+        } else {
+          showResults();
+        }
+      }, 1500);
+    }
+
+function showResults() {
+      // 1. 화면 전환 (퀴즈 숨김 -> 결과 표시)
+      quizContainer.classList.add("hidden");
+      startContainer.classList.add("hidden");
+      
+      resultContainer.classList.remove("hidden");
+      resultContainer.style.display = "block"; // 모바일 flex 대응이 필요하면 수정 가능
+      
+      // 2. 점수별 멘트 및 배경 클래스 결정
+      let feedbackMessage = "";
+      let bgClass = "";
+
+      if (score === totalQuestions) { // 8점 (만점)
+        feedbackMessage = "완벽해요! 문화 척척박사!";
+        bgClass = "score-high";
+      } else if (score >= 5) { // 5~7점
+        feedbackMessage = "조금만 더 맞혀봐요! 힘내요!";
+        bgClass = "score-mid";
+      } else { // 0~4점
+        feedbackMessage = "아쉬워요! 다시 도전해봐요";
+        bgClass = "score-low";
+      }
+
+      // 3. [핵심] 제목(h2)을 점수별 멘트로 교체
+      // "결과를 확인하세요!" 자리에 위에서 정한 멘트가 들어갑니다.
+      const resultTitle = resultContainer.querySelector("h2");
+      if (resultTitle) {
+        resultTitle.innerText = feedbackMessage;
+      }
+
+      // 4. 배경 이미지 변경 (기존 클래스 초기화 후 새 클래스 추가)
+      resultContainer.classList.remove("score-low", "score-mid", "score-high");
+      resultContainer.classList.add(bgClass);
+
+      // 5. 점수 표시 (그대로 유지)
+      scoreTextEl.innerHTML = `${totalQuestions}개 중 <span class="highlight-score">${score}개</span>를 맞혔습니다!`;
+    }
+
+    startBtn.addEventListener("click", startQuiz);
+    retryBtn.addEventListener("click", showStartScreen);
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        quizContainer.classList.add("hidden");
+        resultContainer.classList.add("hidden");
+        startContainer.classList.remove("hidden");
+        startContainer.style.display = "block";
+    });
+
+
+
+    // 상단 네비바 스크롤 고정
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar1 = document.querySelector('header.navbar1');
+    let lastScrollY = 0; // 마지막 스크롤 위치
+    const threshold = 100; // 내비게이션 바 숨김/표시를 시작할 스크롤 임계값 (px)
+
+    function handleScroll() {
+        const currentScrollY = window.scrollY;
+
+        // 1. 페이지 맨 위 (스크롤 0)일 때 처리
+        if (currentScrollY === 0) {
+            navbar1.classList.add('initial-visible'); // 초기 투명 상태로 보이게
+            navbar1.classList.remove('scrolled-visible');
+            navbar1.classList.remove('scrolled-hidden');
+            lastScrollY = 0; // 스크롤 위치 초기화
+            return; // 이후 로직 실행하지 않음
+        } 
+        
+        // 2. 페이지 맨 위가 아니면 initial-visible 제거
+        navbar1.classList.remove('initial-visible');
+
+        // 3. 스크롤 임계값을 넘었을 때만 숨김/표시 로직 적용
+        if (currentScrollY > threshold) {
+            // 스크롤을 올릴 때 (현재 스크롤이 이전 스크롤보다 작을 때)
+            if (currentScrollY < lastScrollY) {
+                navbar1.classList.add('scrolled-visible'); // 나타남
+                navbar1.classList.remove('scrolled-hidden');
+            } 
+            // 스크롤을 내릴 때 (현재 스크롤이 이전 스크롤보다 클 때)
+            else if (currentScrollY > lastScrollY) {
+                navbar1.classList.add('scrolled-hidden'); // 숨김
+                navbar1.classList.remove('scrolled-visible');
+            }
+        } else {
+            // 임계값 이내에서는 기본적으로 숨김 상태 유지 (또는 원하는 대로)
+            // 여기서는 임계값 내에서 스크롤 방향과 상관없이 숨김으로 유지
+            navbar1.classList.add('scrolled-hidden'); 
+            navbar1.classList.remove('scrolled-visible');
+        }
+
+        lastScrollY = currentScrollY; // 현재 스크롤 위치 업데이트
+    }
+
+    // 스크롤 이벤트 리스너 추가
+    window.addEventListener('scroll', handleScroll);
+
+    // 페이지 로드 시 초기 상태를 한 번 실행하여 설정
+    handleScroll();
+});
+  </script>
+
+<script src="script.js"></script>
+</body>
+</html>

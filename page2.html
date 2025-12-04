@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hai-Days</title>
+    <link rel="stylesheet" href="style.css">
+
+<style>
+	.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+	}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- 네비게이션 -->
+<header class="navbar navbar1">
+    <a href="index.html" class="logo">
+      <img src="img/Logo.png" alt="하이데이즈 로고">
+    </a>
+
+    <nav>
+      <ul class="nav-links">
+        <li ><a href="page1.html">설날</a></li>
+        <li class="active"><a href="page2.html">추석</a></li>
+        <li><a href="page3.html">행사</a></li>
+        <li><a href="page4.html">퀴즈</a></li>
+      </ul>
+    </nav>
+
+  <div class="hamburger">☰</div>
+</header>
+
+<!-- ✅ Hero Section -->
+<section class="conA_2">
+    <div class="hero-bg">
+      <picture>
+        <source media="(max-width: 768px)" srcset="img/page2/hero_m.png">
+        <img src="img/page2/hero.png" alt="Hero 배경" />
+      </picture>
+    </div>
+</section>
+  <!-- E : Hero 배경 -->
+
+<!-- S : conA-B 추석 서브 네비바 -->
+<div class="fixed-sidebar right-nav">
+  <ul>
+    <li class="active"><a href="#conB_2">추석 날짜</a></li>
+    <li><a href="#conC_2">추석 행사</a></li>
+    <li><a href="#conE_2">추석 음식</a></li>
+    <li><a href="#conF_2">추석 놀이</a></li>
+  </ul>
+</div>
+<!-- E : conA-B 추석 서브 네비바 -->
+ 
+
+<!-- S : conB 추석 비교 -->
+<section id="conB_2" class="conB_2">
+    <div class="conB-content">
+      <img src="img/page2/conB_1.png" alt="설날 문화 메인 이미지" class="conB-main" />
+    </div>
+</section>
+<!-- E : conB 추석 비교 -->
+
+<div class="overlap-img-wrap2">
+  <img src="img/page2/conA_bg.png" class="overlap-img2">
+</div>
+
+<!-- S : conC 베트남 추석 -->
+<section id="conC_2" class="conC_2">
+  <div class="contentC">
+    <div class="text-area">
+      <h2>베트남 추석은 <span>‘어린이날’?</span></h2>
+      <p class="desc">
+        베트남 추석(Trung Thu)은 아이들이 주인공이 되는 특별한 명절이에요.
+        사자춤과 등불 행진을 즐기며, 월병과 과일을 나누고 달을 보며 소원을 빌어요.
+      </p>
+
+
+      <div class="info-box">
+        <!-- ① 별 모양 등불 (이미지 + 텍스트) -->
+        <div class="lantern">
+          <img src="img/page2/conC_1.png" alt="별 모양 등불">
+          <div class="text">
+            <h3>덴옹사오<br><span class="vietnamese-text">den ông sao</span></h3>
+            <p>아이들이 들고 다니는 전통 등불로, <br class="br-desktop">대나무 뼈대에 셀로판지를 씌워 별 모양을 만들어요.</p>
+            <!-- <br class="br-mobile">-->
+          </div>
+        </div>
+
+
+        <!-- ② 등불 행진 (텍스트 + 이미지) -->
+        <div class="lantern reverse">
+          <div class="text">
+            <h3>등불 행진<br><span class="vietnamese-text">Rước đèn</span></h3>
+            <p>나쁜 기운을 쫓고 건강을 기원하며 아이들은<br>과자와 사탕을 나눠 주며 마을을 행진해요.</p>
+          </div>
+          <img src="img/page2/conC_2.png" alt="등불 행진">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- E : conC 베트남 추석 -->
+
+
+<div class="overlap-img-wrap3">
+  <img src="img/page2/con_bg.png" class="overlap-img3">
+</div>
+
+
+<!-- S : conD 한국 추석 -->
+<section id="conC_2" class="conD_2">
+  <div class="contentD">
+    <div class="text-area korea">
+      <h2>한국 추석은 <span>‘가족의 명절’!</span></h2>
+      <p class="desc">
+        한국 추석은 온 가족이 모여 조상께 감사드리고 풍요를 나누는 큰 명절이에요.
+        차례와 성묘를 하고, 송편을 빚으며 함께 음식을 나누고 놀이도 즐겨요.
+      </p>
+
+
+      <div class="info-box">
+        <!-- ① 차례상 (이미지 + 텍스트) -->
+        <div class="lantern">
+          <img src="img/page2/conD_1.png" alt="차례상">
+          <div class="text korea">
+            <h3>차례상<br><span class="vietnamese-text">Bàn thờ Chuseok</span></h3>
+            <p>정성껏 차려진 음식을 차례상에 올리고<br>감사와 추모의 마음을 전하는 의식이에요.</p>
+          </div>
+        </div>
+
+
+        <!-- ② 성묘 (텍스트 + 이미지) -->
+        <div class="lantern reverse">
+          <div class="text korea">
+            <h3>성묘<br><span class="vietnamese-text">Tảo mộ</span></h3>
+            <p>가족이 함께 조상의 은혜에 감사하며<br>묘를 돌보는 소중한 시간이에요.</p>
+          </div>
+          <img src="img/page2/conD_2.png" alt="성묘">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- E : conD 한국 추석 -->
+
+
+<!-- S : conE 추석 음식 -->
+<section id="conE_2" class="conE_2">
+  <div class="title-area common-title">
+    <span class="subtitle">추석 음식</span>
+    <h2>한국과 베트남에서는 <br class="br-mobile">어떤 음식을 먹을까?</h2>
+    <p class="text-pc">음식을 클릭해봐요!<br>▾</p>
+    <p class="text-mobile">음식을 터치해봐요!<br>▾</p>
+  </div>
+
+  <div class="table">
+      <!-- 송편 -->
+      <div class="food-item" id="songpyeon">
+        <img src="./img/page2/food/k2.png" alt="송편">
+        <div class="popup">
+          <h3>🇰🇷 송편 <span class="vietnamese-text">Bánh Songpyeon</span></h3>
+          <p>추석에 먹는 반달 모양의 떡으로, 안에는 깨·콩·밤 같은 소가 들어있어요.</p>
+        </div>
+      </div>
+
+      <!-- 전 부치기 -->
+      <div class="food-item" id="jeon">
+        <img src="./img/page2/food/k1.png" alt="전 부치기">
+        <div class="popup">
+          <h3>🇰🇷 전 부치기 <span class="vietnamese-text">Rán jeon</span></h3>
+          <p>온 가족이 함께 모여 다양한 재료를 부쳐 먹으며 정을 나누어요.</p>
+        </div>
+      </div>
+
+      <!-- 반쭝투 -->
+      <div class="food-item" id="bantrungthu">
+        <img src="./img/page2/food/v1.png" alt="반쭝투">
+        <div class="popup">
+          <h3>🇻🇳 반쭝투 <span class="vietnamese-text">Bánh Trung Thu</span></h3>
+          <p>가족과 나눠 먹으며 감사를 표현해요. 녹두, 견과류 같은 재료가 들어있어요.</p>
+        </div>
+      </div>
+
+      <!-- 포멜로 -->
+      <div class="food-item" id="pomelo">
+        <img src="./img/page2/food/v2.png" alt="포멜로">
+        <div class="popup">
+          <h3>🇻🇳 포멜로 <span class="vietnamese-text">Bưởi</span></h3>
+          <p>보름달을 상징하며 베트남 추석에 가족의 풍요를 기원하는 과일이에요.</p>
+        </div>
+      </div>
+    </div>
+
+</section>
+<!-- E : conE 추석 음식 -->
+
+<div class="overlap-img-wrap2 E">
+  <img src="img/page2/conF_bg.png" class="overlap-img2">
+</div>
+
+
+<!-- S : conF 추석 놀이 -->
+<section id="conF_2" class="conF_2">
+  <div class="title-area common-title">
+    <span class="subtitle dark">추석 놀이</span>
+    <h2>한국과 베트남에서는 <br class="br-mobile">어떤 놀이를 할까?</h2>
+    <p>▾ 카드를 클릭해봐요! ▾</p>
+  </div>
+
+<main class="page">
+    <div class="carousel" id="carousel">
+      </div>
+
+    <div class="mobile-controls">
+      <button class="nav-btn prev">❮</button>
+      <button class="nav-btn next">❯</button>
+    </div>
+      <!-- 카드 1 -->
+      <div class="card" data-index="1">
+        <div class="card-content">
+          <img class="card-img" src="img/page2/conF_card/card1.png" alt="사자춤" />
+          <div class="desc">
+            <h3>사자춤</h3> <span class="vietnamese-text">Múa lân</span>
+            <p>복을 불러와 거리를 활기차게 하고, <br class="br-desktop">힘찬 북소리로 모두에게 축복을 전해요.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 카드 2 -->
+      <div class="card" data-index="0">
+        <div class="card-content">
+          <img class="card-img" src="img/page2/conF_card/card2.png" alt="달맞이" />
+          <div class="desc">
+            <h3>달맞이</h3> <span class="vietnamese-text">Ngắm trăng</span>
+            <p>가족이 모여 보름달에 소원을 빌고, <br class="br-desktop">달빛 아래 모여 서로의 행복을 기원해요.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 카드 3 -->
+      <div class="card" data-index="2">
+        <div class="card-content">
+          <img class="card-img" src="img/page2/conF_card/card3.png" alt="윷놀이" />
+          <div class="desc">
+            <h3>윷놀이</h3> <span class="vietnamese-text">Trò chơi Yutnori</span>
+            <p>가족이 함께 즐기는 전통 윷놀이로, <br class="br-desktop">윷을 던져 말을 움직이며 승부를 겨뤄요.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 카드 4 -->
+      <div class="card" data-index="3">
+        <div class="card-content">
+          <img class="card-img" src="img/page2/conF_card/card4.png" alt="강강술래" />
+          <div class="desc">
+            <h3>강강술래</h3> <span class="vietnamese-text">Điệu múa Ganggangsullae</span>
+            <p>손을 맞잡고 노래하며 도는 전통 놀이로, <br class="br-desktop">춤추며 풍년과 마을의 안녕을 빌어요.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</section>
+<!-- E : conF 추석 놀이 -->
+ 
+
+<!-- footer -->
+<div class="footer_bg page2">
+  <div class="footer_1">
+    <a href="page4.html">
+      <img src="img/Quiz.png" alt="Quiz" class="Quiz">
+    </a>
+  </div>
+</div>
+
+
+<footer class="footer">
+  <div class="logo_f"> <img src="img/Logo_footer.png" alt="하이데이즈 로고"> </div>
+
+  <div class="footer-copy">
+    © 2025 Hai-Days. Discovery, Inc. or its subsidiaries and affiliates.<br class="text-pc">
+    All trademarks are the property of their respective owners. All rights reserved.
+  </div>
+</footer>
+<button id="topBtn" title="맨 위로 이동">⬆</button>
+
+
+<script>
+// ✅ 오른쪽 고정 네비바 (추석)
+document.addEventListener('DOMContentLoaded', () => {
+  const sidebarLinks = document.querySelectorAll('.right-nav a');
+  const sections = document.querySelectorAll('#conB_2, #conC_2, #conE_2, #conF_2');
+
+  function updateActiveLink() {
+    let current = '';
+    const center = window.scrollY + window.innerHeight / 2;
+    sections.forEach(sec => {
+      const top = sec.offsetTop;
+      const bottom = top + sec.offsetHeight;
+      if (center >= top && center < bottom) current = sec.id;
+    });
+
+    sidebarLinks.forEach(link => {
+      link.parentElement.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) link.parentElement.classList.add('active');
+    });
+  }
+
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) window.scrollTo({ top: target.offsetTop, behavior: 'smooth' });
+    });
+  });
+
+  window.addEventListener('scroll', updateActiveLink);
+  updateActiveLink();
+});
+
+// ✅ conB부터 네비바 표시 (공통)
+document.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.querySelector('.fixed-sidebar.right-nav');
+  const conB = document.querySelector('[id^="conB_"]'); // conB_1, conB_2 등
+  if (!sidebar || !conB) return;
+
+  function toggleSidebar() {
+    const triggerY = conB.offsetTop - 100; // conB 상단에서 100px 전쯤부터 표시
+    if (window.scrollY < triggerY) {
+      sidebar.style.opacity = '0';
+      sidebar.style.visibility = 'hidden';
+      sidebar.style.pointerEvents = 'none';
+    } else {
+      sidebar.style.opacity = '1';
+      sidebar.style.visibility = 'visible';
+      sidebar.style.pointerEvents = 'auto';
+    }
+  }
+
+  window.addEventListener('scroll', toggleSidebar);
+  toggleSidebar();
+});
+
+
+
+
+  // 스크롤 시 버튼 표시
+  const topBtn = document.getElementById("topBtn");
+
+  // 스크롤 시 버튼 보이기/숨기기
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 250) {
+      topBtn.classList.add("show");
+    } else {
+      topBtn.classList.remove("show");
+    }
+  });
+
+  // 클릭 시 부드럽게 상단 이동
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+
+
+/* conF : 카드 인터랙션 최신버전 */
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = Array.from(document.querySelectorAll(".card"));
+  const total = cards.length; // 4
+  let current = 0;            // 중앙 카드 인덱스
+
+  // 상태 반영
+  function render(spinIndex = null){
+    cards.forEach((card, i) => {
+      card.classList.remove("is-left","is-center","is-right","is-back");
+      const rel = (i - current + total) % total; // 0:center, 1:right, 2:back, 3:left
+
+      if (rel === 0) {
+        card.classList.add("is-center");
+        const content = card.querySelector(".card-content");
+        content.classList.remove("spin-in");
+        if (spinIndex === i) {
+          requestAnimationFrame(() => content.classList.add("spin-in"));
+        }
+      } else if (rel === 1) {
+        card.classList.add("is-right");
+      } else if (rel === total - 1) {
+        card.classList.add("is-left");
+      } else {
+        card.classList.add("is-back");
+      }
+    });
+  }
+
+  // 양옆 카드 클릭 시 한 스텝 회전 (대칭 동작)
+  cards.forEach((card, i) => {
+    card.addEventListener("click", () => {
+      const rel = (i - current + total) % total;
+      if (rel === 1) {                 // 오른쪽 클릭: right -> center, center -> left
+        current = (current + 1) % total;
+        render(i);
+      } else if (rel === total - 1) {  // 왼쪽 클릭: left -> center, center -> right
+        current = (current - 1 + total) % total;
+        render(i);
+      }
+      // center/back 클릭은 무시
+    });
+  });
+
+  render(); // 초기 배치
+});
+
+
+// 상단 네비바 스크롤 고정
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar1 = document.querySelector('header.navbar1');
+    let lastScrollY = 0; // 마지막 스크롤 위치
+    const threshold = 100; // 내비게이션 바 숨김/표시를 시작할 스크롤 임계값 (px)
+
+    function handleScroll() {
+        const currentScrollY = window.scrollY;
+
+        // 1. 페이지 맨 위 (스크롤 0)일 때 처리
+        if (currentScrollY === 0) {
+            navbar1.classList.add('initial-visible'); // 초기 투명 상태로 보이게
+            navbar1.classList.remove('scrolled-visible');
+            navbar1.classList.remove('scrolled-hidden');
+            lastScrollY = 0; // 스크롤 위치 초기화
+            return; // 이후 로직 실행하지 않음
+        } 
+        
+        // 2. 페이지 맨 위가 아니면 initial-visible 제거
+        navbar1.classList.remove('initial-visible');
+
+        // 3. 스크롤 임계값을 넘었을 때만 숨김/표시 로직 적용
+        if (currentScrollY > threshold) {
+            // 스크롤을 올릴 때 (현재 스크롤이 이전 스크롤보다 작을 때)
+            if (currentScrollY < lastScrollY) {
+                navbar1.classList.add('scrolled-visible'); // 나타남
+                navbar1.classList.remove('scrolled-hidden');
+            } 
+            // 스크롤을 내릴 때 (현재 스크롤이 이전 스크롤보다 클 때)
+            else if (currentScrollY > lastScrollY) {
+                navbar1.classList.add('scrolled-hidden'); // 숨김
+                navbar1.classList.remove('scrolled-visible');
+            }
+        } else {
+            // 임계값 이내에서는 기본적으로 숨김 상태 유지 (또는 원하는 대로)
+            // 여기서는 임계값 내에서 스크롤 방향과 상관없이 숨김으로 유지
+            navbar1.classList.add('scrolled-hidden'); 
+            navbar1.classList.remove('scrolled-visible');
+        }
+
+        lastScrollY = currentScrollY; // 현재 스크롤 위치 업데이트
+    }
+
+    // 스크롤 이벤트 리스너 추가
+    window.addEventListener('scroll', handleScroll);
+
+    // 페이지 로드 시 초기 상태를 한 번 실행하여 설정
+    handleScroll();
+});
+
+
+// 모바일 conF_2 카드
+/* conF : 카드 인터랙션 (PC + 모바일 화살표) */
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = Array.from(document.querySelectorAll(".card"));
+  const total = cards.length; 
+  let current = 0; 
+
+  // 상태 반영 함수
+  function render(){
+    cards.forEach((card, i) => {
+      card.classList.remove("is-left","is-center","is-right","is-back");
+      const rel = (i - current + total) % total; 
+
+      if (rel === 0) {
+        card.classList.add("is-center");
+      } else if (rel === 1) {
+        card.classList.add("is-right");
+      } else if (rel === total - 1) {
+        card.classList.add("is-left");
+      } else {
+        card.classList.add("is-back");
+      }
+    });
+  }
+
+  // 1. 기존: 카드 클릭 시 회전 (PC용)
+  cards.forEach((card, i) => {
+    card.addEventListener("click", () => {
+      const rel = (i - current + total) % total;
+      if (rel === 1) {                 
+        current = (current + 1) % total;
+        render();
+      } else if (rel === total - 1) {  
+        current = (current - 1 + total) % total;
+        render();
+      }
+    });
+  });
+
+  // 2. [추가] 모바일 화살표 버튼 클릭 이벤트
+  const prevBtn = document.querySelector('.nav-btn.prev');
+  const nextBtn = document.querySelector('.nav-btn.next');
+
+  if(prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+      current = (current - 1 + total) % total; // 이전 카드로
+      render();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      current = (current + 1) % total; // 다음 카드로
+      render();
+    });
+  }
+
+  render(); // 초기 실행
+});
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
